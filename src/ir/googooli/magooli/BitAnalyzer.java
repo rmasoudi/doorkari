@@ -1,4 +1,4 @@
-package ir.mahsan.balout;
+package ir.googooli.magooli;
 
 public class BitAnalyzer {
 

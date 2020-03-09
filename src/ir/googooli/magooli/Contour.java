@@ -1,4 +1,4 @@
-package ir.mahsan.balout;
+package ir.googooli.magooli;
 
 import org.opencv.core.*;
 import org.opencv.imgcodecs.Imgcodecs;
