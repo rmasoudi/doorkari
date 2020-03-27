@@ -5,9 +5,6 @@ import com.cloudinary.utils.ObjectUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.opencv.core.Core;
@@ -54,7 +51,7 @@ public class Capture {
                         double ratio = count * 100 / (diff.width() * diff.height());
                         if (ratio > 1 && System.currentTimeMillis() - lastSend > 2000) {
                             MatOfByte matOfByte = new MatOfByte();
-                            Imgproc.resize(image, image, new Size(100, 100));
+                            Imgproc.resize(image, image, new Size(300, 300));
                             Imgcodecs.imencode(".jpg", image, matOfByte);
                             byte[] bytes = matOfByte.toArray();
                             Map upload = cloudinary.uploader().upload(bytes, ObjectUtils.asMap(
